@@ -3,6 +3,7 @@ package com.unoSpringBoot.study;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,7 +20,12 @@ public class TestController {
 	}
 
 	@GetMapping("/{id}")
-	public String testControllerWithPathVariables(@PathVariable(required = false) int id) {
+	public String testControllerWithPathVariables(@PathVariable(required = false) String id) {
 		return "Hello wolrd!! ID = " + id;
+	}
+
+	@GetMapping("/testRequestParam")
+	public String testControllerRequestParam(@RequestParam(required = false) String id) {
+		return "Hello wolrd!! ID = " + id + "하위~~!!";
 	}
 }
