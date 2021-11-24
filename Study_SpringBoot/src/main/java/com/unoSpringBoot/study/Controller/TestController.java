@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.Controllera;
+package com.unoSpringBoot.study.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
