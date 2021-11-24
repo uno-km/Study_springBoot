@@ -16,7 +16,7 @@ public class TodoService {
 		TodoEntity todoEntity = TodoEntity.builder().title("하위~").userId("KimEunHo").build();
 		todoRepository.save(todoEntity);
 		TodoEntity saveEntity = todoRepository.findById(todoEntity.getId()).get();
-		return saveEntity.getUserId()+" <-- 아이디 , 제목 --> " + saveEntity.getTitle();
+		return saveEntity.getUserId();
 	}
 
 }
