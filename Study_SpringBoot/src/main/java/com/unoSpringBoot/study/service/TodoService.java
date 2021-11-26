@@ -1,11 +1,17 @@
 package com.unoSpringBoot.study.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.unoSpringBoot.study.UnoDOC.Validate;
 import com.unoSpringBoot.study.model.TodoEntity;
 import com.unoSpringBoot.study.persistence.TodoRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class TodoService {
 
@@ -19,4 +25,10 @@ public class TodoService {
 		return saveEntity.getUserId();
 	}
 
+	public List<TodoEntity> createTodo(final TodoEntity entity) {
+		Validate.checkValidate(entity);
+		todoRepository.save(entity);
+		log.info("entity id : {} is saved", entity.getId());
+		return todoRepository.findByUserId(entity.getUserId());
+	}
 }
