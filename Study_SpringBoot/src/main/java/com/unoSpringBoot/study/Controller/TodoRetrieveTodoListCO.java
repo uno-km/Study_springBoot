@@ -19,10 +19,18 @@ public class TodoRetrieveTodoListCO {
 	private TodoService service;
 
 	public ResponseEntity<?> TodoRetrieveTodoList() {
-		String tmpUserId = "unoKim";
-		List<TodoEntity> entities = service.retrieveTodo(tmpUserId);
-		List<TodoDTO> dtos = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
-		ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
-		return ResponseEntity.ok().body(response);
+
+		try {
+			// 데이터셋팅
+			List<TodoEntity> entities = service.retrieveTodo("KIM_EUN_HO");
+			List<TodoDTO> outDTO = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
+			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(outDTO).build();
+			return ResponseEntity.ok().body(response);
+		} catch (Exception e) {
+			// TODO: handle exception
+			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().error("오류").build();
+			return ResponseEntity.badRequest().body(response);
+		}
+
 	}
 }

@@ -36,7 +36,7 @@ public class TodoSO {
 	@Autowired
 	TodoRetrieveTodoListCO todoRetrieveTodoListCO;
 
-	@GetMapping("/")
+	@GetMapping
 	public ResponseEntity<?> retrieveTodoList() {
 		return todoRetrieveTodoListCO.TodoRetrieveTodoList();
 	}

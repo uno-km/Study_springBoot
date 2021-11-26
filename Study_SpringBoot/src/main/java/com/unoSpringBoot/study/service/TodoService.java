@@ -26,6 +26,7 @@ public class TodoService {
 	}
 
 	public List<TodoEntity> retrieveTodo(final String userId) {
+		log.info("entity id : {} is saved", userId);
 		return todoRepository.findByUserId(userId);
 	}
 
