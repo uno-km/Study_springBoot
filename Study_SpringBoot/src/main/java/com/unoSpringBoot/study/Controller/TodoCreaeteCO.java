@@ -19,17 +19,18 @@ public class TodoCreaeteCO {
 	private TodoService service;
 
 	private final String USER_ID = "KIM_EUN_HO";
-	private TodoEntity todoEntity;
+	private TodoEntity todoEntity = new TodoEntity();
 
 	public <R> ResponseEntity<?> createTodo(TodoDTO dto) {
 		try {
-			todoEntity.setEntity(dto);
+			//데이터셋팅
+			todoEntity = TodoDTO.setEntity(dto);
 			todoEntity.setId(null);
 			todoEntity.setUserId(USER_ID);
+			
 			List<TodoEntity> entities = service.createTodo(todoEntity);
 			List<TodoDTO> outDTO = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
 			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(outDTO).build();
-
 			return ResponseEntity.ok().body(response);
 		} catch (Exception e) {
 			// TODO: handle exception

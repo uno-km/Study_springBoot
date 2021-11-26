@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.unoSpringBoot.study.Controller.TodoController;
 import com.unoSpringBoot.study.Controller.TodoCreaeteCO;
+import com.unoSpringBoot.study.Controller.TodoRetrieveTodoListCO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
 
 @RestController
@@ -31,4 +32,13 @@ public class TodoSO {
 	public ResponseEntity<?> createTodo(@RequestBody TodoDTO dto) {
 		return todoCreateCO.createTodo(dto);
 	}
+
+	@Autowired
+	TodoRetrieveTodoListCO todoRetrieveTodoListCO;
+
+	@GetMapping("/")
+	public ResponseEntity<?> retrieveTodoList() {
+		return todoRetrieveTodoListCO.TodoRetrieveTodoList();
+	}
+
 }
