@@ -17,7 +17,6 @@ public class TodoDeleteCO {
 
 	@Autowired
 	private TodoService service;
-	@Autowired
 	private final String USER_ID = "KIM_EUN_HO";
 
 	public <R> ResponseEntity<?> deleteTodo(TodoDTO dto) {
