@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.unoSpringBoot.study.DTO.ResponseDTO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
-import com.unoSpringBoot.study.UnoDOC.ReturnList;
+import com.unoSpringBoot.study.UnoDOC.Return;
 import com.unoSpringBoot.study.model.TodoEntity;
 import com.unoSpringBoot.study.service.TodoService;
 
@@ -24,7 +24,7 @@ public class TodoUpdateCO {
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
 			todoEntity.setUserId(USER_ID);
 			List<TodoEntity> entities = service.updateTodo(todoEntity);
-			return ReturnList.returnList(entities);
+			return Return.returnList(entities);
 		} catch (Exception e) {
 			// TODO: handle exception
 			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().error("오류").build();

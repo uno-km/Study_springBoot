@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.unoSpringBoot.study.DTO.ResponseDTO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
-import com.unoSpringBoot.study.UnoDOC.ReturnList;
+import com.unoSpringBoot.study.UnoDOC.Return;
 import com.unoSpringBoot.study.model.TodoEntity;
 import com.unoSpringBoot.study.service.TodoService;
 
@@ -24,10 +24,9 @@ public class TodoDeleteCO {
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
 			todoEntity.setUserId(USER_ID);
 			List<TodoEntity> entities = service.deleteTodo(todoEntity);
-			return ReturnList.returnList(entities);
+			return Return.returnList(entities);
 		} catch (Exception e) {
-			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().error(e.getMessage()).build();
-			return ResponseEntity.badRequest().body(response);
+			return Return.returnError(e);
 		}
 	}
 }
