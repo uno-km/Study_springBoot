@@ -13,15 +13,17 @@ import com.unoSpringBoot.study.model.TodoEntity;
 import com.unoSpringBoot.study.service.TodoService;
 
 @Service
-public class TodoRetrieveTodoListCO {
+public class TodoUpdateCO {
 
 	@Autowired
 	private TodoService service;
+	private final String USER_ID = "KIM_EUN_HO";
 
-	public ResponseEntity<?> TodoRetrieveTodoList() {
+	public ResponseEntity<?> updateTodo(TodoDTO dto) {
 		try {
-			// 데이터셋팅
-			List<TodoEntity> entities = service.retrieveTodo("KIM_EUN_HO");
+			TodoEntity todoEntity = TodoDTO.setEntity(dto);
+			todoEntity.setUserId(USER_ID);
+			List<TodoEntity> entities = service.updateTodo(todoEntity);
 			List<TodoDTO> outDTO = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
 			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(outDTO).build();
 			return ResponseEntity.ok().body(response);
