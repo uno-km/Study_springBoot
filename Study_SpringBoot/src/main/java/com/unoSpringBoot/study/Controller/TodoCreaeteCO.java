@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.DTO.ResponseDTO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
 import com.unoSpringBoot.study.UnoDOC.Return;
 import com.unoSpringBoot.study.model.TodoEntity;
@@ -22,17 +21,15 @@ public class TodoCreaeteCO {
 
 	public <R> ResponseEntity<?> createTodo(TodoDTO dto) {
 		try {
-			//데이터셋팅
+			// 데이터셋팅
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
 			todoEntity.setId(null);
 			todoEntity.setUserId(USER_ID);
-			
+
 			List<TodoEntity> entities = service.createTodo(todoEntity);
 			return Return.returnList(entities);
 		} catch (Exception e) {
-			// TODO: handle exception
-			ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().error("오류").build();
-			return ResponseEntity.badRequest().body(response);
+			return Return.returnError(e);
 		}
 	}
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.DTO.ResponseDTO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
 import com.unoSpringBoot.study.UnoDOC.Return;
 import com.unoSpringBoot.study.model.TodoEntity;
