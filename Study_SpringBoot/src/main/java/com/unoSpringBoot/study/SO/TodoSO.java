@@ -37,7 +37,7 @@ public class TodoSO {
 		return todoController.testControllerResponseEntity();
 	}
 
-	@PostMapping("/createTodo")
+	@PostMapping
 	public ResponseEntity<?> createTodo(@RequestBody TodoDTO dto) { // todo생성
 		return todoCreateCO.createTodo(dto);
 	}
