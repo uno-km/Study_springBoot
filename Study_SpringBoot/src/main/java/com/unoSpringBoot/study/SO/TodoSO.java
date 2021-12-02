@@ -18,7 +18,7 @@ import com.unoSpringBoot.study.Controller.Todo.TodoUpdateCO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
 
 @RestController
-@RequestMapping("todo")
+@RequestMapping("/todo")
 public class TodoSO {
 
 	@Autowired
