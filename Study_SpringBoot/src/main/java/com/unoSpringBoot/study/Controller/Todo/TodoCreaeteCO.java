@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.Controller;
+package com.unoSpringBoot.study.Controller.Todo;
 
 import java.util.List;
 
@@ -12,20 +12,25 @@ import com.unoSpringBoot.study.model.TodoEntity;
 import com.unoSpringBoot.study.service.TodoService;
 
 @Service
-public class TodoDeleteCO {
+public class TodoCreaeteCO {
 
 	@Autowired
 	private TodoService service;
+
 	private final String USER_ID = "KIM_EUN_HO";
 
-	public <R> ResponseEntity<?> deleteTodo(TodoDTO dto) {
+	public <R> ResponseEntity<?> createTodo(TodoDTO dto) {
 		try {
+			// 데이터셋팅
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
+			todoEntity.setId(null);
 			todoEntity.setUserId(USER_ID);
-			List<TodoEntity> entities = service.deleteTodo(todoEntity);
+
+			List<TodoEntity> entities = service.createTodo(todoEntity);
 			return Return.returnList(entities);
 		} catch (Exception e) {
 			return Return.returnError(e);
+
 		}
 	}
 }
