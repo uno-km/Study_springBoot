@@ -13,7 +13,7 @@ import com.unoSpringBoot.study.DTO.UserDTO;
 
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("auth")
 public class UserSO {
 	@Autowired
 	RegistUserCO registUserCO;

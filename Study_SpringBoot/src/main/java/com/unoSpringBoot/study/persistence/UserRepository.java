@@ -9,7 +9,7 @@ import com.unoSpringBoot.study.model.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, String> {
 	UserEntity findByEmail(String email);
 
-	Boolean exitsByEmail(String email);
+	Boolean existsByEmail(String email);
 
 	UserEntity findByEmailAndPassword(String email, String password);
 }

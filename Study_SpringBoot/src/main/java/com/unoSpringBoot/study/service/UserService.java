@@ -20,7 +20,7 @@ public class UserService {
 			throw new RuntimeException("유효하지 않은 값이 들어왔습니다!");
 		}
 		final String email = userEntity.getEmail();
-		if (userRepository.exitsByEmail(email)) {
+		if (userRepository.existsByEmail(email)) {
 			log.warn("이 이메일은 이미 있습니다. {}", email);
 			throw new RuntimeException("이 이메일은 이미 있습니다.");
 		}
