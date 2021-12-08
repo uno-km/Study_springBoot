@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unoSpringBoot.study.Controller.TodoController;
-import com.unoSpringBoot.study.Controller.TodoCreaeteCO;
-import com.unoSpringBoot.study.Controller.TodoDeleteCO;
-import com.unoSpringBoot.study.Controller.TodoRetrieveTodoListCO;
-import com.unoSpringBoot.study.Controller.TodoUpdateCO;
+import com.unoSpringBoot.study.Controller.Todo.TodoController;
+import com.unoSpringBoot.study.Controller.Todo.TodoCreaeteCO;
+import com.unoSpringBoot.study.Controller.Todo.TodoDeleteCO;
+import com.unoSpringBoot.study.Controller.Todo.TodoRetrieveTodoListCO;
+import com.unoSpringBoot.study.Controller.Todo.TodoUpdateCO;
 import com.unoSpringBoot.study.DTO.TodoDTO;
 
 @RestController
-@RequestMapping("todo")
+@RequestMapping("/todo")
 public class TodoSO {
 
 	@Autowired

@@ -16,4 +16,9 @@ public class Validate {
 			throw new RuntimeException("해당하는 값이없다.");
 		}
 	}
+	public static void checkValidateSession() {
+		//Todo : http 클래스를 이용해서 세션값을 받아 계속 로그인이 되어있는지,권환을 확인한다.
+		
+	}
+	
 }

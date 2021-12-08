@@ -47,7 +47,7 @@ public class TodoService {
 			//예외가 발생했을때 아이디와 예외를 로깅한다.
 			log.error("에러발생!!엔티티 삭제할떄 오류가 발생..", entity.getId(), e);
 			//컨트롤러로 예외를 보낸다. 데이터 베이스 내부 로직을 캡슐화 하려면
-			//e를 리턴하지 않고 새 exception 오브젝트를 리턴한다.
+			//e를 리턴하지 않고 새 exception 오++                                                                                                                                                                                                                                                                                           브젝트를 리턴한다.
 			throw new RuntimeException("에려가 발생했습니다." + entity.getId());
 		}
 		return retrieveTodo(entity.getUserId());
