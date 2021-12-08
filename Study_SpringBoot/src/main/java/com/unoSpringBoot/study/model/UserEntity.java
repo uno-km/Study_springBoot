@@ -31,6 +31,6 @@ public class UserEntity {
 	private String email;// 사용자의 이메일, 아이디와 같은 기능
 	@Column(nullable = false)
 	private String password;// 패스워드
-	@Column(nullable = false)
-	private String auth;
+//	@Column(nullable = false)
+//	private String auth;
 }
