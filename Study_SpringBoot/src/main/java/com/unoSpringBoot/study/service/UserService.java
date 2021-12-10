@@ -31,10 +31,13 @@ public class UserService {
 		return userRepository.findByEmailAndPassword(email, password);
 	}
 
+	public UserEntity findByEmailAndUsername(final String email, final String username) {
+		return userRepository.findByEmailAndUsername(email, username);
+	}
+
 //	public UserEntity changeUserInfo(final String password) {
 //		return userRepository.changeUserInfo(password);
 //	}
-//
 //	public boolean checkUserPassword(final String password) {
 //		return userRepository.checkUserPassword(password);
 //	}
