@@ -40,5 +40,4 @@ public class UserSO {
 //	public UserEntity changeUserInfo(@RequestBody UserDTO userDTO) {
 //		return changeUserInfoCO.changeUserInfo(userDTO);
 //	}
-
 }
