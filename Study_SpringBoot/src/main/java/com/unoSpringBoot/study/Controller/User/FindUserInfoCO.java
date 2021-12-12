@@ -10,19 +10,15 @@ import com.unoSpringBoot.study.model.UserEntity;
 import com.unoSpringBoot.study.service.UserService;
 
 @Service
-public class RegistUserCO {
+public class FindUserInfoCO {
 	@Autowired
-	private UserService userService;
+	private UserService service;
 
-	public ResponseEntity<?> registUser(UserDTO userDTO) {
+	public ResponseEntity<?> findUserInfo(UserDTO userDTO) {
 		try {
-			System.out.println(userDTO.getAuth());
-			UserEntity userEntity = UserEntity.builder().email(userDTO.getEmail()).username(userDTO.getUsername())
-					.password(userDTO.getPassword()).auth(userDTO.getAuth()).build();
-			// 서비스를 이용해 리포지터리에 사용자 저장
-			UserEntity registeredUser = userService.createUser(userEntity);
-			UserDTO responseUserDTO = UserDTO.builder().email(registeredUser.getEmail()).id(registeredUser.getId())
-					.username(registeredUser.getUsername()).auth(registeredUser.getAuth()).build();
+			UserEntity userEntity = service.findByEmailAndUsername(userDTO.getEmail(), userDTO.getUsername());
+			final UserDTO responseUserDTO = UserDTO.builder().username(userEntity.getUsername())
+					.email(userEntity.getEmail()).auth(userEntity.getAuth()).password(userEntity.getPassword()).build();
 			return ResponseEntity.ok().body(responseUserDTO);
 		} catch (Exception e) {
 			// 사용자 정보는 항상 하나이므로 리스트로 만들어야하는 ResponseDTO를 사용하지 않고 그냥 UserDTO리턴하도록 함

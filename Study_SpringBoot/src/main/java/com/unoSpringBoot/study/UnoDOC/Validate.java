@@ -1,6 +1,9 @@
 package com.unoSpringBoot.study.UnoDOC;
 
+import com.unoSpringBoot.study.DTO.UserDTO;
 import com.unoSpringBoot.study.model.TodoEntity;
+import com.unoSpringBoot.study.model.UserEntity;
+import com.unoSpringBoot.study.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,9 +19,25 @@ public class Validate {
 			throw new RuntimeException("해당하는 값이없다.");
 		}
 	}
-	public static void checkValidateSession() {
-		//Todo : http 클래스를 이용해서 세션값을 받아 계속 로그인이 되어있는지,권환을 확인한다.
+
+	public static boolean checkLoginSession(final UserDTO userDTO) {
+		// Todo : http 클래스를 이용해서 세션값을 받아 계속 로그인이 되어있는지,권환을 확인한다.
+		String sessionEmail = "zhfldk014745@naver.com";
+		String sessionName = "김은호";
 		
+		if (!"".equals(userDTO.getEmail()) || !"".equals(userDTO.getUsername())) {
+			if (sessionEmail.equals(userDTO.getEmail()) && sessionName.equals(userDTO.getUsername())) {
+				return true;
+			}
+		}
+		return false;
 	}
-	
+
+	public static void NONE_userCheck(UserDTO userDTO) {
+		UserService service = new UserService();
+		UserEntity user = service.getByCredentials(userDTO.getEmail(), userDTO.getPassword());
+		if (user.getEmail().length() == 0 || user == null) {
+
+		}
+	}
 }

@@ -16,7 +16,7 @@ public class TodoRetrieveTodoListCO {
 	@Autowired
 	private TodoService service;
 
-	public ResponseEntity<?> TodoRetrieveTodoList() {
+	public ResponseEntity<?> TodoRetrieveTodoList(String userId) {
 		try {
 			// 데이터셋팅
 			List<TodoEntity> entities = service.retrieveTodo("KIM_EUN_HO");

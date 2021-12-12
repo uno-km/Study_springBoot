@@ -19,13 +19,6 @@ public class TodoService {
 	@Autowired
 	private TodoRepository todoRepository;
 
-	public String testService() {
-		TodoEntity todoEntity = TodoEntity.builder().title("하위~").userId("KimEunHo").build();
-		todoRepository.save(todoEntity);
-		TodoEntity saveEntity = todoRepository.findById(todoEntity.getId()).get();
-		return saveEntity.getUserId();
-	}
-
 	public List<TodoEntity> retrieveTodo(final String userId) {
 		log.info("entity id : {} is saved", userId);
 		return todoRepository.findByUserId(userId);
