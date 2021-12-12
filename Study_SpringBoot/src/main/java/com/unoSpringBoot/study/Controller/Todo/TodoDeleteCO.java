@@ -16,12 +16,11 @@ public class TodoDeleteCO {
 
 	@Autowired
 	private TodoService service;
-	private final String USER_ID = "KIM_EUN_HO";
 
-	public <R> ResponseEntity<?> deleteTodo(TodoDTO dto) {
+	public <R> ResponseEntity<?> deleteTodo(String userId, TodoDTO dto) {
 		try {
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
-			todoEntity.setUserId(USER_ID);
+			todoEntity.setUserId(userId);
 			List<TodoEntity> entities = service.deleteTodo(todoEntity);
 			return Return.returnList(entities);
 		} catch (Exception e) {

@@ -16,12 +16,11 @@ public class TodoUpdateCO {
 
 	@Autowired
 	private TodoService service;
-	private final String USER_ID = "KIM_EUN_HO";
 
-	public ResponseEntity<?> updateTodo(TodoDTO dto) {
+	public ResponseEntity<?> updateTodo(String userId, TodoDTO dto) {
 		try {
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
-			todoEntity.setUserId(USER_ID);
+			todoEntity.setUserId(userId);
 			List<TodoEntity> entities = service.updateTodo(todoEntity);
 			return Return.returnList(entities);
 		} catch (Exception e) {

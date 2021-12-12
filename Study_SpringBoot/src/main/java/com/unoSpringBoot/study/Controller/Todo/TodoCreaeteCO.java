@@ -17,15 +17,12 @@ public class TodoCreaeteCO {
 	@Autowired
 	private TodoService service;
 
-	private final String USER_ID = "KIM_EUN_HO";
-
-	public <R> ResponseEntity<?> createTodo(TodoDTO dto) {
+	public <R> ResponseEntity<?> createTodo(String userId, TodoDTO dto){
 		try {
 			// 데이터셋팅
 			TodoEntity todoEntity = TodoDTO.setEntity(dto);
 			todoEntity.setId(null);
-			todoEntity.setUserId(USER_ID);
-
+			todoEntity.setUserId(userId);
 			List<TodoEntity> entities = service.createTodo(todoEntity);
 			return Return.returnList(entities);
 		} catch (Exception e) {
