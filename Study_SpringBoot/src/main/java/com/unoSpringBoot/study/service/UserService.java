@@ -1,6 +1,7 @@
 package com.unoSpringBoot.study.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.unoSpringBoot.study.model.UserEntity;
@@ -27,8 +28,14 @@ public class UserService {
 		return userRepository.save(userEntity);
 	}
 
-	public UserEntity getByCredentials(final String email, final String password) {
-		return userRepository.findByEmailAndPassword(email, password);
+	public UserEntity getByCredentials(final String email, final String password,
+			final PasswordEncoder passwordEncoder) {
+		final UserEntity originalUser = userRepository.findByEmail(email);
+		// matches 메서드를 이용해 패스워드가 같은지 확인합니다.
+		if (originalUser != null && passwordEncoder.matches(password, originalUser.getPassword())) {
+			return originalUser;
+		}
+		return null;
 	}
 
 	public UserEntity findByEmailAndUsername(final String email, final String username) {

@@ -1,5 +1,8 @@
 package com.unoSpringBoot.study.UnoDOC;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import com.unoSpringBoot.study.DTO.UserDTO;
 import com.unoSpringBoot.study.model.TodoEntity;
 import com.unoSpringBoot.study.model.UserEntity;
@@ -24,7 +27,7 @@ public class Validate {
 		// Todo : http 클래스를 이용해서 세션값을 받아 계속 로그인이 되어있는지,권환을 확인한다.
 		String sessionEmail = "zhfldk014745@naver.com";
 		String sessionName = "김은호";
-		
+
 		if (!"".equals(userDTO.getEmail()) || !"".equals(userDTO.getUsername())) {
 			if (sessionEmail.equals(userDTO.getEmail()) && sessionName.equals(userDTO.getUsername())) {
 				return true;
@@ -35,7 +38,8 @@ public class Validate {
 
 	public static void NONE_userCheck(UserDTO userDTO) {
 		UserService service = new UserService();
-		UserEntity user = service.getByCredentials(userDTO.getEmail(), userDTO.getPassword());
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		UserEntity user = service.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
 		if (user.getEmail().length() == 0 || user == null) {
 
 		}
