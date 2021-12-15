@@ -15,16 +15,19 @@ import com.unoSpringBoot.study.service.UserService;
 @Service
 public class LoginUserCO {
 	@Autowired
-	private TokenProvider tokenProvide;
+	private TokenProvider tokenProvider;
 	@Autowired
-	private UserService service;
+	private UserService userService;
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-	
+
 	public ResponseEntity<?> authenticate(UserDTO userDTO) {
-		UserEntity user = service.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
+		System.out.println("하우ㅐㅣ~~~~");
+		UserEntity user = userService.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
+
 		if (user != null) {
 			// 여기서 부터 토큰생성을 해주는 기능을 넣어준다!
-			final String token = tokenProvide.create(user);
+			System.out.println(passwordEncoder);
+			final String token = tokenProvider.create(user);
 			final UserDTO responseUserDTO = UserDTO.builder().email(user.getUsername()).id(user.getId()).token(token)
 					.build();
 			return ResponseEntity.ok().body(responseUserDTO);
