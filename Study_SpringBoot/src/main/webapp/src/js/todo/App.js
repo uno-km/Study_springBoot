@@ -1,10 +1,10 @@
 import React from 'react';
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
-import Header from "./test.js";
+import Header from "../test.js";
 import { Paper, List, Container }  from "@material-ui/core";
-import '../css/App.css';
-import { call } from './service/ApiService';
+import '../../css/App.css';
+import { call } from '../service/ApiService';
 
 var todoURL = "/todo";
 

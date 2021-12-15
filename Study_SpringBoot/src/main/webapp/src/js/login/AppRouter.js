@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/index.css";
-import App from "./App.js";
+import "../../css/index.css";
+import App from "../todo/App.js";
 import Login from "./Login";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Box from "@material-ui/core/Box";
