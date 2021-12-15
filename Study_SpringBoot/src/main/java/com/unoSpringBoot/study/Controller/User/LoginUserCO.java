@@ -19,8 +19,8 @@ public class LoginUserCO {
 	@Autowired
 	private UserService service;
 
+	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	public ResponseEntity<?> authenticate(UserDTO userDTO) {
-		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		UserEntity user = service.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
 		if (user != null) {
 			// 여기서 부터 토큰생성을 해주는 기능을 넣어준다!
