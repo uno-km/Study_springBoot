@@ -18,8 +18,8 @@ public class LoginUserCO {
 	private TokenProvider tokenProvide;
 	@Autowired
 	private UserService service;
-
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
 	public ResponseEntity<?> authenticate(UserDTO userDTO) {
 		UserEntity user = service.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
 		if (user != null) {
