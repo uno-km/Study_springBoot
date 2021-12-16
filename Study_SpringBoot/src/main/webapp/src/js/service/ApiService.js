@@ -41,7 +41,9 @@ export function call(api, method, request) {
       return Promise.reject(error);
     });
 }
-
+export function signup(userDTO){
+  return call("/auth/signup","POST",userDTO);
+}
 export function signin(userDTO) {
   return call("/auth/signin", "POST", userDTO).then((response) => {
     if (response.token) {
