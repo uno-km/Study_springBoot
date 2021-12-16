@@ -21,7 +21,6 @@ public class LoginUserCO {
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	public ResponseEntity<?> authenticate(UserDTO userDTO) {
-		System.out.println("하우ㅐㅣ~~~~");
 		UserEntity user = userService.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
 
 		if (user != null) {
