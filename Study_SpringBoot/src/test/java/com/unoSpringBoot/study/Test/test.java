@@ -17,7 +17,6 @@ public class test {
 
 	@Test
 	public void testGetTime() {
-		log.info("testMapper class name: " + testMapper.getClass().getName());
-		log.info("testMapper time: " + testMapper.getTime());
+		log.info("testMapper class name: " + testMapper.getList());
 	}
 }

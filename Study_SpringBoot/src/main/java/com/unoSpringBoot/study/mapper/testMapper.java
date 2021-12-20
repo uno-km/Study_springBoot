@@ -1,11 +1,13 @@
 package com.unoSpringBoot.study.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+
+import com.unoSpringBoot.study.DTO.testDTO;
 
 @Mapper
 public interface testMapper {
 
-	@Select("select sysdate from dual")
-	public String getTime();
+	public List<testDTO> getList();
 }
