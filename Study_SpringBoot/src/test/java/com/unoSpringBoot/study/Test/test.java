@@ -13,11 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 public class test {
 
 	@Autowired
-	private testMapper timeMapper;
+	private testMapper testMapper;
 
 	@Test
 	public void testGetTime() {
-		log.info("timeMapper class name: " + timeMapper.getClass().getName());
-		log.info("timeMapper time: " + timeMapper.getTime());
+		log.info("testMapper class name: " + testMapper.getClass().getName());
+		log.info("testMapper time: " + testMapper.getTime());
 	}
 }
