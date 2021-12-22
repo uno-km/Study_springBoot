@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.config;
+package com.aPlatformers.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

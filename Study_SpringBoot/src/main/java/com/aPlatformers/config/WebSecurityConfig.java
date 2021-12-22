@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.config;
+package com.aPlatformers.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.web.filter.CorsFilter;
 
-import com.unoSpringBoot.study.security.JwtAuthenticationFilter;
+import com.aPlatformers.security.JwtAuthenticationFilter;
 
 import lombok.extern.slf4j.Slf4j;
 

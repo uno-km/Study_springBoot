@@ -1,10 +1,10 @@
-package com.unoSpringBoot.study.mapper;
+package com.aPlatformers.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.unoSpringBoot.study.DTO.testDTO;
+import com.aPlatformers.DTO.testDTO;
 
 @Mapper
 public interface testMapper {

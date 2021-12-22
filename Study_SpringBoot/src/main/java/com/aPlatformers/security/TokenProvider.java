@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.security;
+package com.aPlatformers.security;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -6,7 +6,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.model.UserEntity;
+import com.aPlatformers.model.UserEntity;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

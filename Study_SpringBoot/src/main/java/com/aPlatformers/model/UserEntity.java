@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.model;
+package com.aPlatformers.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

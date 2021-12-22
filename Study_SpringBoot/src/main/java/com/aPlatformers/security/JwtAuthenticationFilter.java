@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.security;
+package com.aPlatformers.security;
 
 import java.io.IOException;
 

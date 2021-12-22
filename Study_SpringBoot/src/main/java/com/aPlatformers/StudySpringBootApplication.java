@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study;
+package com.aPlatformers;
 
 import java.nio.charset.Charset;
 
