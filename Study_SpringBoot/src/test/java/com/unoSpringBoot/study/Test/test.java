@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.unoSpringBoot.study.mapper.testMapper;
+import com.aPlatformers.mapper.testMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
