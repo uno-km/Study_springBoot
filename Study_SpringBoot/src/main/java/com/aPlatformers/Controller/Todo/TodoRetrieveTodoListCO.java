@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.Controller.Todo;
+package com.aPlatformers.Controller.Todo;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.UnoDOC.Return;
-import com.unoSpringBoot.study.model.TodoEntity;
-import com.unoSpringBoot.study.service.TodoService;
+import com.aPlatformers.UnoDOC.Return;
+import com.aPlatformers.model.TodoEntity;
+import com.aPlatformers.service.TodoService;
 
 @Service
 public class TodoRetrieveTodoListCO {

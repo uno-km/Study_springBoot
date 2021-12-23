@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.SO;
+package com.aPlatformers.SO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unoSpringBoot.study.Controller.Todo.TodoCreaeteCO;
-import com.unoSpringBoot.study.Controller.Todo.TodoDeleteCO;
-import com.unoSpringBoot.study.Controller.Todo.TodoRetrieveTodoListCO;
-import com.unoSpringBoot.study.Controller.Todo.TodoUpdateCO;
-import com.unoSpringBoot.study.DTO.TodoDTO;
+import com.aPlatformers.Controller.Todo.TodoCreaeteCO;
+import com.aPlatformers.Controller.Todo.TodoDeleteCO;
+import com.aPlatformers.Controller.Todo.TodoRetrieveTodoListCO;
+import com.aPlatformers.Controller.Todo.TodoUpdateCO;
+import com.aPlatformers.DTO.TodoDTO;
 
 @RestController
 @RequestMapping("/todo")

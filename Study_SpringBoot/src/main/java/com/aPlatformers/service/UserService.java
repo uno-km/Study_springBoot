@@ -1,11 +1,11 @@
-package com.unoSpringBoot.study.service;
+package com.aPlatformers.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.model.UserEntity;
-import com.unoSpringBoot.study.persistence.UserRepository;
+import com.aPlatformers.model.UserEntity;
+import com.aPlatformers.persistence.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 

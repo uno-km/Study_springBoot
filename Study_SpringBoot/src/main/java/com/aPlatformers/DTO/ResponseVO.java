@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.DTO;
+package com.aPlatformers.DTO;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;

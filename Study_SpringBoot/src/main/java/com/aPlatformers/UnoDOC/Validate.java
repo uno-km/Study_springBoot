@@ -1,12 +1,12 @@
-package com.unoSpringBoot.study.UnoDOC;
+package com.aPlatformers.UnoDOC;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.unoSpringBoot.study.DTO.UserDTO;
-import com.unoSpringBoot.study.model.TodoEntity;
-import com.unoSpringBoot.study.model.UserEntity;
-import com.unoSpringBoot.study.service.UserService;
+import com.aPlatformers.DTO.UserDTO;
+import com.aPlatformers.model.TodoEntity;
+import com.aPlatformers.model.UserEntity;
+import com.aPlatformers.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 

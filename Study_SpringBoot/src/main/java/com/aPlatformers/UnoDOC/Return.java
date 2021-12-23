@@ -1,13 +1,13 @@
-package com.unoSpringBoot.study.UnoDOC;
+package com.aPlatformers.UnoDOC;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 
-import com.unoSpringBoot.study.DTO.ResponseDTO;
-import com.unoSpringBoot.study.DTO.TodoDTO;
-import com.unoSpringBoot.study.model.TodoEntity;
+import com.aPlatformers.DTO.ResponseDTO;
+import com.aPlatformers.DTO.TodoDTO;
+import com.aPlatformers.model.TodoEntity;
 
 public class Return {
 	public static ResponseEntity<ResponseDTO<TodoDTO>> returnList(final List<TodoEntity> entities) {

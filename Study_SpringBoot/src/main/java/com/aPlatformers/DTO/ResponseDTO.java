@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.DTO;
+package com.aPlatformers.DTO;
 
 import java.util.List;
 

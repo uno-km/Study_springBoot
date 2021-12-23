@@ -1,6 +1,6 @@
-package com.unoSpringBoot.study.DTO;
+package com.aPlatformers.DTO;
 
-import com.unoSpringBoot.study.model.TodoEntity;
+import com.aPlatformers.model.TodoEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

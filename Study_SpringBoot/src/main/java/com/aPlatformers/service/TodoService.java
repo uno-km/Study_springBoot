@@ -1,4 +1,4 @@
-package com.unoSpringBoot.study.service;
+package com.aPlatformers.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.UnoDOC.Validate;
-import com.unoSpringBoot.study.model.TodoEntity;
-import com.unoSpringBoot.study.persistence.TodoRepository;
+import com.aPlatformers.UnoDOC.Validate;
+import com.aPlatformers.model.TodoEntity;
+import com.aPlatformers.persistence.TodoRepository;
 
 import lombok.extern.slf4j.Slf4j;
 

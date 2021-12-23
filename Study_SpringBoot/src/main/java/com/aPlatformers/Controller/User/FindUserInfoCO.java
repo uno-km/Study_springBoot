@@ -1,13 +1,13 @@
-package com.unoSpringBoot.study.Controller.User;
+package com.aPlatformers.Controller.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.unoSpringBoot.study.DTO.ResponseDTO;
-import com.unoSpringBoot.study.DTO.UserDTO;
-import com.unoSpringBoot.study.model.UserEntity;
-import com.unoSpringBoot.study.service.UserService;
+import com.aPlatformers.DTO.ResponseDTO;
+import com.aPlatformers.DTO.UserDTO;
+import com.aPlatformers.model.UserEntity;
+import com.aPlatformers.service.UserService;
 
 @Service
 public class FindUserInfoCO {
